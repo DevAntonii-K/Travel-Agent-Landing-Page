@@ -1,0 +1,228 @@
+
+
+.hero{
+    padding: 60px 0;
+}
+
+.hero__container {
+    display: flex;
+    gap: 80px;
+}
+
+.hero__cta {
+    max-width: 560px;
+    max-height: 640px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hero__title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.hero__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+//-----------------UNDERLINE
+
+.hero__underline {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+}
+
+.hero__desc {
+    color: var(--secondary-text-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+// --------------BOOKING
+
+.hero__booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(144, 144, 144, 0.3);
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.hero__group {
+    display: flex;
+    gap: 12px;
+}
+
+
+.hero__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.hero__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero__label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main-etxt-color)
+}
+
+.hero__input {
+    border: none;
+    outline: none;
+}
+
+
+.hero__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.hero__search-icon {
+    width: 24px;
+    height: 24px;
+}
+
+// --------------- HERO IMAGES
+.hero__images {
+    width: 560px;
+    height: 640px;
+    position: relative;
+}
+
+.hero__img-product {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hero__img-product:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.hero__scroll {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.hero__scroll-wrapper {
+    width: 140px;
+    height: 140px;
+    position: relative;
+}
+
+.hero__scroll-text {
+    position: absolute;
+    bottom: 0;
+    animation: rotation 10s infinite linear;
+}
+
+.hero__scroll-icon {
+    width: 49px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//  --------------- ANIMATION
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#map-container {
+    display: none;
+    /* Карта прихована */
+    height: 350px;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+
+/* Темна тема для Air Datepicker */
+.air-datepicker {
+    --adp-background-color: #1E1E1E;
+    /* Основний фон (з твого макета) */
+    --adp-color: #FFFFFF;
+    /* Білий текст */
+    --adp-accent-color: var(--accent);
+    /* Твій синій колір для виділення */
+    --adp-border-color: rgba(255, 255, 255, 0.1);
+    /* Ледь помітна рамка */
+    --adp-border-radius: 16px;
+    /* Твій радіус закруглення */
+    
+
+    /* Кольори для комірок (днів) */
+    --adp-cell-background-color-hover: rgba(255, 255, 255, 0.05);
+    --adp-cell-background-color-selected: var(--accent);
+
+    /* Кольори для кнопок навігації */
+    --adp-btn-color-hover: var(--accent);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    /* Глибока тінь для темної теми */
+}
+
+/* Колір назв місяців та років у заголовку */
+.air-datepicker-nav--title,
+.air-datepicker-nav--title i {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Назви днів тижня (зробимо їх трохи тьмянішими) */
+.air-datepicker-body--day-name {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+/* Стиль для кнопки "Сьогодні" */
+.air-datepicker-button {
+    color: var(--accent);
+    font-weight: bold;
+}

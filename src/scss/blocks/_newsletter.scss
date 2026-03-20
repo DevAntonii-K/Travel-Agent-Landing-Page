@@ -1,0 +1,94 @@
+.newsletter {
+    padding: 40px 0;
+    background-color: var(--accent);
+    overflow: hidden;
+}
+
+/* Твій оригінальний контейнер з картинкою */
+.newsletter__container {
+    padding: 40px 24px 47px 180px;
+    position: relative;
+}
+
+.newsletter__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    /* Твій маркер - залишаємо як був */
+    &::before {
+        content: "";
+        position: absolute;
+        left: -80px;
+        top: -65px;
+        width: 236px;
+        height: 273px;
+        background-image: url('./../../img/marker.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+/* ТЕКСТОВИЙ БЛОК */
+.newsletter__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.newsletter__title {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+}
+
+.newsletter__subtitle {
+    color: #F0F0F0;
+    font-size: 20px;
+}
+
+/* ФОРМА ТА КНОПКА (Стосунки між ними) */
+.newsletter__form {
+    display: flex;
+    gap: 12px;
+    /* Відступ між білим полем і кнопкою */
+}
+
+.newsletter__field {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.newsletter__input {
+    width: 265px;
+    border: none;
+    outline: none;
+    color: #181818;
+    font-size: 14px;
+}
+
+.newsletter__icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
+    /* Колір іконки */
+}
+
+.newsletter__button {
+    padding: 12px 24px;
+    color: white;
+    background-color: var(--main-text-color);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.newsletter__button:hover {
+    opacity: 0.9;
+}

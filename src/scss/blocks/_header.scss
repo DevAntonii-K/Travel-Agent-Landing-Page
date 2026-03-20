@@ -1,0 +1,59 @@
+
+
+.header {
+	padding: 16px 0;
+
+
+	.nav__container{
+		
+	}
+	.desk-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+
+	.icon {}
+
+	.icon--logo {}
+
+	.nav__menu {
+		display: flex;
+		gap: 24px;
+		
+		a{
+			color:var(--main-text-color);
+			
+		}
+		.--active {
+			color: var(--accent);
+		}
+		li:hover a{
+			color: var(--accent);
+		}
+		
+	}
+
+
+
+	.nav__btns {
+		display: flex;
+		gap:12px;
+
+		button{
+			padding:8px 20px;
+			border-radius: 8px;
+			line-height: 1.5;
+			
+		}
+		.--login-btn{
+			color:#454545;
+			border: 1px solid #B7B7B7;
+		}
+		.--sign-up-btn{
+			background-color: #181818;
+			color:white;
+		}
+	}
+}
