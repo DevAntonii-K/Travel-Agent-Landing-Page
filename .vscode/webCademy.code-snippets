@@ -13,12 +13,48 @@
 		"description": "Log output to console"
 	},
 
+	/* Media Laptop */
+	"mediaLaptop": {
+		"scope": "css,scss",
+		"prefix": "laptop",
+		"body": [
+			"@include laptop {",
+			"    ${1}",
+			"}"
+		],
+		"description": "laptop"
+	},
+
+	/* Media Tablet Land */
+	"mediaTabletLand": {
+		"scope": "css,scss",
+		"prefix": "tablet-land",
+		"body": [
+			"@include tablet-land {",
+			"    ${1}",
+			"}"
+		],
+		"description": "tablet-landscape"
+	},
+
 	/* Media Tablet */
 	"mediaTablet": {
 		"scope": "css,scss",
 		"prefix": "tablet",
 		"body": ["@include tablet {", "    ${1}", "}"],
 		"description": "tablet"
+	},
+
+	// Media Mobile L
+	"mediaMobileL": {
+		"scope": "css,scss",
+		"prefix": "mobile-l",
+		"body": [
+			"@include mobile-l {",
+			"    ${1}",
+			"}"
+		],
+		"description": "mobile-large"
 	},
 
 	/* Media Mobile */
@@ -28,7 +64,18 @@
 		"body": ["@include mobile {", "    ${1}", "}"],
 		"description": "mobile"
 	},
-
+	
+	// Media Mobile S
+	"mediaMobileS": {
+		"scope": "css,scss",
+		"prefix": "mobile-s",
+		"body": [
+			"@include mobile-s {",
+			"    ${1}",
+			"}"
+		],
+		"description": "mobile-small"
+	},
 	/* CSS, SCSS snippets */
 	"bgimg: Background image": {
 		"scope": "css,scss",

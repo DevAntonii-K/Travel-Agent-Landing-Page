@@ -2,14 +2,47 @@
 	background-color: var(--main-text-color);
 	color: white;
 	padding: 80px 0;
-	/* Падінги на секцію, не на контейнер */
+		@include laptop {
+			padding:60px 0;
+		}
+		@include tablet-land {
+			padding:50px 0;
+		}
+		@include tablet {
+			
+		}
+		@media (max-width:426px) {
+			padding: 35px 0;
+		}
+		@include mobile-l {
+			padding: 20px 0;
+		}
+		@include mobile-s {
+			padding: 15px 0;
+		}
+}
+
+.footer__container{
+	@include laptop {
+		padding: 0 30px;
+	}
+	@include tablet {
+		padding: 0 30px;
+	}
+	@include mobile-l {
+		padding: 0 15px;
+	}
 }
 
 .footer__content {
 	display: flex;
 	justify-content: space-between;
-	gap: 60px;
-	/* Мінімальна відстань між брендом і навігацією */
+	gap: 60px;	
+	
+	@include mobile-l {
+		flex-direction: column;
+		gap: 20px;
+	}
 }
 
 .footer__brand {
@@ -17,6 +50,9 @@
 	flex-direction: column;
 	gap: 24px;
 	max-width: 350px;
+	@include mobile-l {
+		gap: 18px;
+	}
 }
 
 .footer__logo {
@@ -28,25 +64,43 @@
 	font-size: 16px;
 	line-height: 1.5;
 	color: rgba(255, 255, 255, 0.8);
-	/* Трохи приглушимо текст */
+	@include tablet {
+		font-size: 14px;
+	}
+	@include mobile-l {
+		
+	}
+	@media (max-width:376px) {
+		
+	}
 }
 
 .footer__nav {
 	display: flex;
 	gap: 80px;
-	/* Відступ між стовпчиками */
+	@include mobile-l {
+		gap: 60px;
+	}
 }
 
 .footer__column {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-}
+
+	
 
 .footer__column-title {
 	font-weight: 500;
 	font-size: 18px;
 	color: #fff;
+	@include tablet-land {
+		font-size: 16px;
+	}
+	@include tablet {
+		font-size: 14px;
+	}
+}
 }
 
 .footer__list {
@@ -54,16 +108,22 @@
 	flex-direction: column;
 	gap: 12px;
 	list-style: none;
-	/* Прибираємо маркери */
+	
 }
 
 .footer__link {
 	color: rgba(255, 255, 255, 0.7);
 	text-decoration: none;
 	transition: color 0.3s ease;
+
+	@include tablet-land {
+		font-size: 14px;
+	}
+	@include tablet {
+		font-size: 12px;
+	}
 }
 
 .footer__link:hover {
 	color: #35AFF4;
-	/* Колір при наведенні */
 }

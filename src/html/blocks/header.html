@@ -1,35 +1,68 @@
 <header class="header">
     <div class="container nav__container">
+
+    <!-----------------------------------------------DESKTOP -->
+
+        <!-- NAV -->
        <nav class="desk-nav">
-        <svg class="icon icon--logo">
-            <use href="./img/svgsprite/sprite.symbol.svg#logo"></use>
-        </svg>
-        <ul class="nav__menu">
-            <li>
-                <a href="" class="--active">Home</a>
-            </li>
-            <li>
-                <a href="">About</a>
-            </li>
-            <li>
-                <a href="">Packages</a>
-            </li>
-            <li>
-                <a href="">FAQ</a>
-            </li>
-            <li>
-                <a href="">Community</a>
-            </li>
-        </ul>
-        <div class="nav__btns">
-            <button class="--login-btn">
-                Login
-            </button>
-            <button class="--sign-up-btn">
-                Sign Up
-            </button>
-        </div>
+            <svg class="icon icon--logo">
+                <use href="./img/svgsprite/sprite.symbol.svg#logo"></use>
+            </svg>
+
+            <!-- NAV MENU -->
+            <ul class="nav__menu">
+                <li>
+                    <a href="" class="--active">Home</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Packages</a>
+                </li>
+                <li>
+                    <a href="">FAQ</a>
+                </li>
+                <li>
+                    <a href="">Community</a>
+                </li>
+            </ul>
+
+
+            <!-- NAV BUTTONS -->
+            <div class="nav__btns">
+                <button class="--login-btn">
+                    Login
+                </button>
+                <button class="--sign-up-btn">
+                    Sign Up
+                </button>
+            </div>
+
+        <!-------------------------------------------MOBILE-->
+            
+            <!-- MOBILE BURGER -->
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- MOBILE MENU-->
+            <div class="mobile-menu">
+                <ul class="mobile-menu__list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="mobile-menu__btns">
+                    <button class="--login-btn">Login</button>
+                    <button class="--sign-up-btn">Sign Up</button>
+                </div>
+            </div>
        </nav>
-    </div>
+       
+    
+    </div>     
 </header>
-@@include('mobile-nav.html')

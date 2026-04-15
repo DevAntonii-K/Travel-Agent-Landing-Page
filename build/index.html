@@ -16,10 +16,15 @@
 		</head>
 		<header class="header">
 			<div class="container nav__container">
+				<!-----------------------------------------------DESKTOP -->
+
+				<!-- NAV -->
 				<nav class="desk-nav">
 					<svg class="icon icon--logo">
 						<use href="./img/svgsprite/sprite.symbol.svg#logo"></use>
 					</svg>
+
+					<!-- NAV MENU -->
 					<ul class="nav__menu">
 						<li>
 							<a href="" class="--active">Home</a>
@@ -37,6 +42,8 @@
 							<a href="">Community</a>
 						</li>
 					</ul>
+
+					<!-- NAV BUTTONS -->
 					<div class="nav__btns">
 						<button class="--login-btn">
 							Login
@@ -44,6 +51,29 @@
 						<button class="--sign-up-btn">
 							Sign Up
 						</button>
+					</div>
+
+					<!-------------------------------------------MOBILE-->
+
+					<!-- MOBILE BURGER -->
+					<div class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+
+					<!-- MOBILE MENU-->
+					<div class="mobile-menu">
+						<ul class="mobile-menu__list">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+						<div class="mobile-menu__btns">
+							<button class="--login-btn">Login</button>
+							<button class="--sign-up-btn">Sign Up</button>
+						</div>
 					</div>
 				</nav>
 			</div>
@@ -73,36 +103,28 @@
 
 						<!-- FORM -->
 						<form action="#" class="hero__booking">
+							<!-- LOCATION -->
 							<div class="hero__location">
-								<div class="hero__group">
-									<svg class="hero__icon icon icon--map">
-										<use href="./img/svgsprite/sprite.symbol.svg#map"></use>
-									</svg>
-									<div class="hero__input-group">
-										<span class="hero__label">Locations</span>
-										<input class="hero__input" type="text" list="countries-list" placeholder="e.g Bali, Indonesia" />
-										<datalist id="countries-list">
-											<option value="Bali, Indonesia"> </option>
-											<option value="Kyiv, Ukraine"> </option>
-											<option value="Reykjavik, Iceland"> </option>
-											<option value="Paris, France"> </option>
-											<option value="Tokyo, Japan"> </option>
-											<option value="Male, Maldives"> </option>
-											<option value="Rome, Italy"> </option>
-											<option value="Barcelona, Spain"> </option>
-										</datalist>
-									</div>
+								<div class="hero__input-group">
+									<span class="hero__label">Locations</span>
+									<input class="hero__input" type="text" list="countries-list" placeholder="e.g Bali, Indonesia" />
+									<datalist id="countries-list">
+										<option value="Bali, Indonesia"> </option>
+										<option value="Kyiv, Ukraine"> </option>
+										<option value="Reykjavik, Iceland"> </option>
+										<option value="Paris, France"> </option>
+										<option value="Tokyo, Japan"> </option>
+										<option value="Male, Maldives"> </option>
+										<option value="Rome, Italy"> </option>
+										<option value="Barcelona, Spain"> </option>
+									</datalist>
 								</div>
 							</div>
+							<!-- DATE -->
 							<div class="hero__date" id="date-wrapper">
-								<div class="hero__group">
-									<svg class="hero__icon icon icon--calendar">
-										<use href="./img/svgsprite/sprite.symbol.svg#calendar"></use>
-									</svg>
-									<div class="hero__input-group">
-										<span class="hero__label">Date and time</span>
-										<input class="hero__input" type="text" id="datepicker-input" placeholder="MM/DD/YYYY" />
-									</div>
+								<div class="hero__input-group">
+									<span class="hero__label">Date and time</span>
+									<input class="hero__input" type="text" id="datepicker-input" placeholder="MM/DD/YYYY" />
 								</div>
 							</div>
 							<!-- HERO BUTTON -->
@@ -1003,7 +1025,7 @@
 			</section>
 		</main>
 		<footer class="footer">
-			<div class="container">
+			<div class="container footer__container">
 				<div class="footer__content">
 					<!-- LOGO -->
 					<div class="footer__brand">

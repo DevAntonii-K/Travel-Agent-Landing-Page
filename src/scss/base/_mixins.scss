@@ -4,14 +4,40 @@
     }
 }
 
-@mixin tablet () {
-    @media (max-width: 1220px) {
+@mixin laptop () {
+    @media (max-width: 1229px) {
 		@content;
 	}
 }
 
-@mixin mobile () {
-    @media (max-width: 820px) {
+@mixin tablet-land () {
+	@media (max-width: 1025px) {
 		@content;
 	}
 }
+
+@mixin tablet () {
+    @media (max-width: 769px) {
+		@content;
+	}
+}
+
+@mixin mobile-l(){
+	@media (max-width: 426px){
+		@content;
+	}
+}
+
+@mixin mobile() {
+	@media (max-width: 376px) {
+		@content;
+	}
+}
+
+@mixin mobile-s() {
+	@media (max-width: 321px) {
+		@content;
+	}
+}
+
+

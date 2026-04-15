@@ -2,12 +2,44 @@
     padding: 40px 0;
     background-color: var(--accent);
     overflow: hidden;
+
+    @include laptop {
+        padding: 20px 0;
+    }
+    @include mobile-l {
+        padding: 20px 0;
+    }
+    @include mobile-s {
+        padding: 15px 0;
+    }
 }
 
-/* Твій оригінальний контейнер з картинкою */
 .newsletter__container {
     padding: 40px 24px 47px 180px;
     position: relative;
+
+    @include laptop {
+        padding: 30px 30px 30px 180px;
+    }
+
+    @include tablet-land {
+        padding-top:15px;
+        padding-bottom: 15px;
+        // max-height: 98px+60px;
+    }
+
+    @include tablet {
+        padding-left: 160px;
+        padding-top: 15px;
+        
+    }
+
+    @include mobile-l {
+        padding: 0 15px;
+        position: static;
+    }
+
+
 }
 
 .newsletter__row {
@@ -15,8 +47,24 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    
+    @include tablet-land {
+        flex-direction: column;    
+        justify-content: center;
+    }
+    
+    @media(max-width:687px) {
+        flex-direction: column;
+    }
+    
+    @include mobile-l {
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+        justify-content: flex-end;
+    }
 
-    /* Твій маркер - залишаємо як був */
     &::before {
         content: "";
         position: absolute;
@@ -27,32 +75,91 @@
         background-image: url('./../../img/marker.png');
         background-repeat: no-repeat;
         background-size: contain;
+        z-index: 1;
+        pointer-events: none;
+
+        @include mobile-l {
+            z-index: -1;
+            top: -62px;
+        }
+        @include mobile {
+            left: -120px;
+        }
     }
 }
+// -------------------------------------------------------------------- TEXT BLOCK
 
-/* ТЕКСТОВИЙ БЛОК */
 .newsletter__text-block {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    
+
+    @include tablet-land {
+        width: auto;
+        text-align:center;
+    }
+    @include tablet {
+        
+    }    
+
+    @media(max-width:687px) {
+        width: fit-content;
+    }
+
+    @include mobile-l {  
+        text-align: right;
+    }
 }
 
 .newsletter__title {
     font-size: 28px;
     font-weight: 500;
     color: white;
+
+    @include tablet {
+        font-size: 24px;
+    }
+
+    @include mobile-s {
+        color: var(--main-text-color);
+    }
 }
 
 .newsletter__subtitle {
     color: #F0F0F0;
     font-size: 20px;
+
+    @include tablet {
+        font-size: 15px;
+    }
+    @include mobile-s {
+        color: var(--main-text-color);
+    }
 }
 
-/* ФОРМА ТА КНОПКА (Стосунки між ними) */
+// ------------------------------------------
 .newsletter__form {
     display: flex;
     gap: 12px;
-    /* Відступ між білим полем і кнопкою */
+
+    @include tablet-land {
+        justify-self: left;
+        align-self: left;
+    }
+    @include tablet {
+        
+    }
+    @media(max-width:687px) {
+        flex-direction: row;
+    }
+    @include mobile-l {
+        width: fit-content;
+        align-self:end;
+    }
+    @include mobile {
+        padding: 15px 0;
+    }
 }
 
 .newsletter__field {
@@ -62,6 +169,10 @@
     padding: 12px;
     border-radius: 8px;
     background-color: #fff;
+
+    @include tablet {
+        padding:10px;
+    }
 }
 
 .newsletter__input {
@@ -70,13 +181,30 @@
     outline: none;
     color: #181818;
     font-size: 14px;
+
+    @include tablet-land {
+        
+    }
+    @include tablet {
+        width: 100%;
+        font-size: 12px;
+    }
+    @include mobile-l {
+        width: 100%;
+    }
+    @include mobile-s {
+        font-size: 12px;
+    }
 }
+
 
 .newsletter__icon {
     width: 20px;
     height: 20px;
     fill: var(--accent);
-    /* Колір іконки */
+    @include tablet {
+        flex-shrink:0;
+    }
 }
 
 .newsletter__button {
@@ -87,6 +215,14 @@
     font-weight: 500;
     cursor: pointer;
     transition: opacity 0.3s;
+
+    @include tablet {
+        padding:10px 18px;
+        font-size: 14px;
+    }
+    @include mobile-s {
+        font-size: 16px;
+    }
 }
 
 .newsletter__button:hover {

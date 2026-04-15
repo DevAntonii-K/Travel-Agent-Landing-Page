@@ -1,105 +1,198 @@
 .feedback {
-    height: 900px;
     overflow: hidden;
-}
 
-.container {}
+    @include mobile-l {
+        padding-bottom: 20px;
+    }
 
-.feedback__container {
-    padding-top: 0;
-    padding-bottom: 0;
-    
-}
-
-.feedback__row {
-    display: flex;
-    gap: 32px;
-}
-
-.feedback__column {
-    display: flex;
-    flex-direction: column;
-    //  
-
-    margin-top: -82px;
-    &.--middle{
-        padding-top: 103px;
+    @include mobile-s {
+        padding-bottom: 15px;
     }
 }
 
 
-// ================SWIPER
+.feedback__container {
+    padding-top: 0;
+    padding-bottom: 0;
 
-.feedback__column.swiper{
-    width: 378.67px;
-    height: 900px;
-    
-    /* Забороняємо виділення тексту при перетягуванні */
-    user-select: none;
-    -webkit-user-select: none;
-    
+    @include laptop {
+        padding: 0 30px;
+    }
+
+    @media (max-width:476px) {
+        padding: 0 15px;
+    }
 }
+
+
+.feedback__row {
+    display: flex;
+    gap: 32px;
+
+    @include tablet-land {
+        gap: 24px;
+    }
+
+    @include mobile-l {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+// ----------------------------------------------------- SWIPER
+
+.feedback__column.swiper {
+    display: flex;
+    flex-direction: column;
+
+    width: 378px;
+    height: 900px;
+    margin-top: -82px;
+
+    cursor: grab;
+    pointer-events: all;
+    user-select: auto;
+    -webkit-user-select: auto;
+
+    @include mobile-l {
+        width: 100%;
+        height: fit-content;
+        flex-direction: initial;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+
+    &.--middle {
+        padding-top: 103px;
+    }
+}
+
 .feedback__column.swiper:active {
     cursor: grabbing;
 }
 
-.feedback__column.swiper-slide{
+.feedback__column .swiper-slide {
     height: auto;
     user-select: none;
 }
+
+.feedback__column.swiper {
+    transition-timing-function: linear !important;
+
+    @include tablet-land {}
+
+    @include mobile-l {}
+}
+
 .feedback__column .swiper-wrapper {
-    transition-timing-function: ease-out;
+    @include mobile-l {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 
-
-// =================SWIPER
+// ---------------------------------------------------- SWIPER CARD
 
 
 .feedback-column__post {
-    width: 378.67px;
-    min-height: 322.89px;
+    width: 100%;
+    height: auto;
+
     padding: 32px;
 
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(23, 28, 31, 0.23);
 
-    figure{
+    @include laptop {
+        width: auto;
+    }
+
+    @include tablet-land {
+        width: 100%;
+    }
+
+    @media(max-width:820px) {
+        padding: 14px
+    }
+
+   
+
+    figure {
         display: flex;
         flex-direction: column;
         gap: 32px;
 
-        blockquote{
+        @include tablet-land {
+            gap: 28px;
+        }
+
+        @media(max-width:820px) {
+            gap: 24px;
+        }
+
+        @include mobile-l {
+            gap: 16px;
+        }
+
+
+        blockquote {
             font-size: 16px;
             line-height: 1.5;
             color: #909090;
+
+            p {
+                @include tablet-land {
+                    font-size: 12px;
+                }
+            }
         }
-        
-        figcaption{
+
+        figcaption {
             display: flex;
             gap: 16px;
             align-items: center;
 
-            .author-info{
+            .author-info {
                 display: flex;
                 flex-direction: column;
 
-                strong{
+                strong {
+                    @include tablet-land {
+                        font-size: 13px;
+                    }
 
+                    @media(max-width:820px) {
+                        font-size: 12px;
+                    }
                 }
-                span{
+
+                span {
                     color: #909090;
+
+                    @include tablet-land {
+                        font-size: 12px;
+                    }
                 }
             }
         }
     }
 
-
-
-
-
 }
 
+
+
+
+.feedback__column.is-paused .swiper-wrapper {
+    transition-duration: 0ms;
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+}
+
+
+
+
+
 .author-info {}
-
-

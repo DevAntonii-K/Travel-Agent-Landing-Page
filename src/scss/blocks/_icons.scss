@@ -14,7 +14,10 @@
 .icon--logo{
 	width:121px;
 	fill: var(--accent);
-	
+	@include laptop {
+			scale: (1.2);
+			transform-origin: left;
+		}
 }
 
 .icon--search {

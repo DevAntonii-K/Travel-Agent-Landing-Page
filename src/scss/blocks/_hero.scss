@@ -2,33 +2,108 @@
 
 .hero{
     padding: 60px 0;
+    @include laptop {
+        padding: 30px 0;
+    }
+    @include tablet-land {
+        padding: 20px 0;
+    }  
+    
+    @media (max-width:321px) {
+        padding: 15px 0;
+    }
 }
 
 .hero__container {
     display: flex;
     gap: 80px;
+
+    @include laptop {
+        padding: 0 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    @include tablet-land{
+        align-items: stretch;
+        gap: 32px;
+    }
+    @media(max-width:820px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    @include mobile-l {
+        padding: 0 15px;
+    }
+    
 }
 
 .hero__cta {
     max-width: 560px;
+    width: 100%;
     max-height: 640px;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 40px;
+    @include laptop {
+            flex: 1 1 auto;
+            max-width: 600px;
+            min-width: 0;
+        }
+    @include tablet-land {
+        flex: 1 1 50%;
+        max-width: 450px;
+        min-width: 0;
+        height: auto;
+        
+    }
+    @media(max-width:820px){
+        max-width:100%;
+        align-items: center;
+        text-align:center;
+    }
+    @include tablet {
+        max-width: fit-content;
+    }
+    @include mobile-l {
+        gap: 20px;
+    }
 }
 
 .hero__text {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include laptop {
+        gap: 46px;
+    }
+    @include mobile-s {
+        gap: 34px;
+    }
+    
 }
 
 .hero__title {
     font-size: 72px;
     font-weight: 800;
     line-height: 1.5;
+    @include laptop {
+            font-size: 67px; 
+            line-height: 1.1;
+        }
+    @include tablet-land {
+        font-size: clamp(42px, 4.5vw, 62px);
+        line-height: 1.2;
+    }
+    @include mobile-s {
+        font-size: 34px;
+    }
+       
 }
 
 .hero__title-wrapper {
@@ -37,12 +112,27 @@
     position: relative;
 }
 
-//-----------------UNDERLINE
+//-------------------------------------------------------------UNDERLINE
 
 .hero__underline {
     position: absolute;
     left: 0;
     bottom: 4px;
+
+    @include laptop {
+        bottom:-12px;
+    }
+    @include tablet-land {
+        bottom:-15px;
+        left:-10px;
+    }
+    @media(max-width:820px){
+        left: 50%;
+        transform: translate(-50%)
+    }
+    @include tablet {
+        
+    }
 }
 
 .hero__desc {
@@ -50,9 +140,24 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
+
+    @include laptop {
+        width: 100%;
+    }
+    @include tablet-land { 
+        font-size: clamp(16px, 1.5vw, 18px);
+        color: #444; 
+    }
+    @media(max-width:820px){
+        max-width:600px;
+        text-align:center;
+    }
+    @include mobile-l {
+        
+    }
 }
 
-// --------------BOOKING
+// ----------------------------------------------------------BOOKING
 
 .hero__booking {
     display: flex;
@@ -61,12 +166,28 @@
     border: 1px solid rgba(144, 144, 144, 0.3);
     border-radius: 16px;
     padding: 12px;
+
+    @include laptop {
+        width: 100%;
+        padding: 8px;
+    }
+    @include tablet-land {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    @include tablet {
+       
+    }
 }
 
-.hero__group {
-    display: flex;
-    gap: 12px;
+.hero__location,
+.hero__date {
+    @include laptop {
+        
+        min-width: 0; // МАГІЧНИЙ РЯДОК: дозволяє блоку ставати меншим за текст всередині
+    }
 }
+
 
 
 .hero__icon {
@@ -84,12 +205,28 @@
 .hero__label {
     font-size: 16px;
     font-weight: 500;
-    color: var(--main-etxt-color)
+    color: var(--main-text-color);
+    @include tablet-land {
+        align-self: start;
+    }
+    @include mobile-l {
+        font-size: 14px;
+    }
+
 }
 
 .hero__input {
     border: none;
     outline: none;
+    @include laptop {
+        font-size: 15px;   
+    }
+    @include tablet {
+       
+    }
+    @include mobile-l {
+        font-size: 12px;
+    }
 }
 
 
@@ -105,6 +242,11 @@
 
     cursor: pointer;
     flex-shrink: 0;
+    @include laptop {
+            width: 40px; 
+            height: 40px;
+            
+        }
 }
 
 .hero__search-icon {
@@ -112,11 +254,40 @@
     height: 24px;
 }
 
-// --------------- HERO IMAGES
+// ------------------------------------------------------------------------------- HERO IMAGES
 .hero__images {
     width: 560px;
     height: 640px;
     position: relative;
+    flex-shrink: 0;
+    
+    @include laptop {
+        flex: 0 0 560px; 
+        margin-left: auto;
+    }
+    @include tablet-land {
+        flex: 1 1 50%;
+        max-width: 560px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 560 / 640;
+        min-width: 380px;
+        
+    }
+    @media(max-width:820px){
+        margin: 0 auto;
+        
+    }
+    @include tablet {
+        max-width:fit-content;
+        max-height: fit-content;
+        min-width: fit-content;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
 }
 
 .hero__img-product {
@@ -124,40 +295,53 @@
     top: 0px;
     left: 0;
     transition: transform 0.3s ease;
+
+    @include tablet-land {
+        position: absolute;
+        top: 0;
+        left: 0;  
+    }
 }
 
 .hero__img-product:hover {
     transform: translateY(-6px) scale(1.02);
 }
 
+// ------------------------------------------------------------------SCROLL IMG
+
 .hero__scroll {
     position: absolute;
-    right: 15px;
-    bottom: 10px;
+    width: 25%; // scales with container
+    right: 5%;
+    bottom: 2%;
+    aspect-ratio: 1 / 1;
 }
 
 .hero__scroll-wrapper {
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    height:100%;
+    
     position: relative;
 }
 
 .hero__scroll-text {
     position: absolute;
-    bottom: 0;
+    inset:0;
+    width: 100%;
+    height: 100%;
     animation: rotation 10s infinite linear;
 }
 
 .hero__scroll-icon {
-    width: 49px;
-    height: 80px;
+    width: 50%;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-//  --------------- ANIMATION
+//  ------------------------------------------------------------------ ANIMATION
 @keyframes rotation {
     from {
         transform: rotate(0deg);
@@ -226,3 +410,5 @@
     color: var(--accent);
     font-weight: bold;
 }
+
+

@@ -3,6 +3,18 @@
 
 .destinations {
    padding: 60px 0;
+   @include laptop {
+       padding:30px 0;
+   }
+   @include mobile-l {
+       padding:20px 0;
+   }
+   @include mobile {
+       
+   }
+   @include mobile-s {
+    padding: 15px 0;
+   }
 }
 
 
@@ -10,11 +22,28 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    @include laptop {
+        padding: 0 30px;
+    }
+    @include tablet {
+        padding: 0 15px;
+    }
+   @include mobile-l {
+        gap: 16px;
+        padding: 0 15px;
+   }
 }
+
+
 .destinations__header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
 }
 
 
@@ -22,25 +51,49 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @media (max-width:320px) {
+        gap: 8px;
+    }
 }
 
 .destinations__title {
     font-size: 36px;
     font-weight: 500;
     color: #181818;
-
+    @include tablet-land {
+        font-size: 39px;
+    }
+    @media (max-width:320px) {
+        font-size: 34px;
+    }
 }
 
 .destinations__subtitle {
     color:#909090;
+    @include tablet-land {
+        font-size: 21px;
+    }
+    @include mobile-l {
+        font-size: 16px;
+    }
+    @include mobile-s {
+        font-size: 16px;
+    }
 }
 
 .destinations__nav {
     display: flex;
     gap: 16px;
+    @include tablet {
+        display: none;
+    }
+    @media (max-width: 480px) {
+        display: none; 
+    }
 }
 
-// ======================BUTTONS
+// -----------------------------------------------BUTTONS
+
 .destinations__btn {
     width: 48px;
     height: 48px;
@@ -55,7 +108,7 @@
     color: #181818;
 }
 
-/* Стиль для активної кнопки (як у макеті синя) */
+
 .destinations__btn--next {
     background-color: #35AFF4;
     border-color: #35AFF4;
@@ -67,7 +120,7 @@
     box-shadow: 0 4px 12px rgba(53, 175, 244, 0.2);
 }
 
-/* Стиль, коли кнопка Swiper неактивна (перший/останній слайд) */
+
 .destinations__btn.swiper-button-disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -78,13 +131,10 @@
 .destinations__btn--prev {}
 
 
-// ======================BUTTONS
+
+// ------------------------------------------------------------------------SWIPER
 
 
-
-
-
-// ===================SWIPER
 
 .destinations__slider.swiper{
     width: 100%;
@@ -93,6 +143,14 @@
     user-select: none;
     -webkit-user-select: none;
     overflow: hidden;
+
+    @include tablet {
+        padding: 0 20px;
+
+    }
+    @include tablet-land {
+        padding: 0 0;
+    }
 }
 
 .destinations__slider.swiper:active{
@@ -108,16 +166,32 @@
 .destinations__slide.swiper-slide {
     width: 304px;
     user-select: none;
+    @include laptop {
+        width: 295px;
+    }
+    @include tablet {
+        width: auto !important;
+    }
 }
 
-// ===================SWIPER
+// =------------------------------------------------------------- CARD
 
 .destination-card {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 304px;
-
+    @include tablet {
+        max-width:304px;
+        min-width:260px;
+        width: auto;
+    }
+    @include mobile-l {
+        gap: 16px;
+    }
+    @media(max-width:375px){
+        // width: auto;
+    }
 }
 
 .destination-card__image {}
@@ -141,11 +215,20 @@
     line-height: 1.5;
     letter-spacing: 0%;
 
+    @include laptop {
+        font-size: 18px;
+    }
+    @media (max-width:476px) {
+        font-size: 16px;
+        }   
 }
 
 .destination-card__price {
     color:#909090;
     line-height: 1.5;
+    @media (max-width:476px) {
+        font-size: 14px;
+    }
         span{
             color:#35AFF4;
         }
@@ -153,6 +236,9 @@
         strong{
             color:#181818;
             font-weight: 500;
+            @media (max-width:476px) {
+                font-size: 14px;
+            }
         }
 }
 

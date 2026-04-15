@@ -1,6 +1,17 @@
 .partners {
     padding: 60px 0;
-    /* Додаємо падінги замість висоти всієї секції */
+    @include laptop {
+        padding: 40px 0;
+    }
+    @include tablet {
+        padding:30px 0;
+    }
+    @include mobile-l {
+        padding: 20px 0;
+    }
+    @include mobile-s {
+        padding: 15px 0;
+    }
 }
 
 .partners__content {
@@ -8,7 +19,19 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    /* Захист на випадок, якщо текст і лого зблизяться */
+    @include laptop {
+        padding: 0 30px;
+    }
+    @include tablet-land{
+        flex-direction: column;
+    }
+    @include tablet {
+        gap: 40px;
+    }
+    @include mobile-l {
+        gap: 16px;
+    }
+    
 }
 
 .partners__title {
@@ -17,7 +40,12 @@
     line-height: 1.4;
     color: #9E9E9E;
     white-space: nowrap;
-    /* Щоб заголовок не розривався */
+    @include tablet-land{
+        font-size: clamp(20px, 4vw, 28px);
+    }
+    @include tablet {
+        font-size: clamp(20px, 4vw + 10px, 32px);
+    }
 }
 
 .partners__list {
@@ -25,18 +53,32 @@
     gap: 32px;
     align-items: center;
     flex-wrap: wrap;
-    /* Щоб логотипи переносились на мобільних */
     justify-content: center;
+    @include laptop {
+        gap: 24px;
+    }
+    @include tablet-land{
+        gap: clamp(24px, 5vw, 53px);
+    }
+    @include tablet {
+        gap: clamp(16px, 5vw, 40px); 
+    }
 }
 
 .partners__logo {
-    height: 28px;
+    height: clamp(24px, 4vw, 30px);
     width: auto;
-    /* Зберігаємо пропорції */
+    
     filter: grayscale(100%);
-    /* Порада: часто лого роблять сірими до ховера */
+    
     opacity: 0.7;
     transition: all 0.3s ease;
+    @include mobile {
+        height: 24px;
+    }
+    @include mobile-s {
+        height: 20px;
+    }
 }
 
 .partners__logo:hover {
